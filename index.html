@@ -1,5 +1,11 @@
-<main>
-   <style>* {
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider</title>
+  <style>* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -161,11 +167,16 @@
     }
   }
   </style>
+</head>
+
+<body>
+  <main>
     <ul class='slider'>
       <li class='item' style="background-image: url('1.jpg')">
         <div class='content'>
           <h2 class='title'>Your Amazing...</h2>
-          <p class='description'> I was thinking about you today and couldn't help but smile. Your presence has a way of making everything better.  </p>
+          <p class='description'> I was thinking about you today and couldn't help but smile. Your presence has a way of
+            making everything better. </p>
           <button>Read More</button>
         </div>
       </li>
@@ -179,13 +190,13 @@
       <li class='item' style="background-image: url('3.jpg')">
         <div class='content'>
           <h2 class='title'>"You are Always in my mind"</h2>
-          <p class='description'> "You're like a fine wine – you get better with time. 😍  </p>
+          <p class='description'> "You're like a fine wine – you get better with time. 😍"</p>
           <button>Read More</button>
         </div>
       </li>
       <li class='item' style="background-image: url('4.jpg')">
         <div class='content'>
-          <h2 class='title'>"When i Lost I find You.."</h2>
+          <h2 class='title'>"When I Lost I find You.."</h2>
           <p class='description'>
             "Do you have a map? Because I just keep getting lost in your eyes every time I see you. 🌟"
           </p>
@@ -196,28 +207,35 @@
         <div class='content'>
           <h2 class='title'>"You are cute .."</h2>
           <p class='description'>
-           "If you were a cat, you'd purr-fectly steal my heart. 
+            "If you were a cat, you'd purr-fectly steal my heart."
           </p>
           <button>Read More</button>
         </div>
       </li>
-    
-      
     </ul>
     <nav class='nav'>
+      <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
       <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
     </nav>
   </main>
-  
+
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <!-- partial -->
-    <script  src="./script.js"></script>
-  <script>const slider = document.querySelector('.slider');
+  <script>
+    const slider = document.querySelector('.slider');
 
     function activate(e) {
       const items = document.querySelectorAll('.item');
-      e.target.matches('.next') && slider.append(items[0]);
-      e.target.matches('.prev') && slider.append(items[items.ngth -1]);
+      if (e.target.matches('.next')) {
+        slider.append(items[0]);
+      }
+      if (e.target.matches('.prev')) {
+        slider.prepend(items[items.length - 1]);
+      }
     }
-    document.addEventListener('click',activate,false);</script>
+
+    document.addEventListener('click', activate, false);
+  </script>
+</body>
+
+</html>
